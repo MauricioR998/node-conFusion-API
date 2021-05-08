@@ -100,4 +100,21 @@ router.delete("/dropCollection", cors.corsWithOptions, function (req, res) {
   );
 });
 
+router.get(
+  "/facebook/token",
+  passport.authenticate("facebook-token"),
+  (req, res) => {
+    if (req.token) {
+      var token = authenticate.getToken({ _id: req.user._id });
+      res.setHeader("Content-Type", "application/json");
+      res.statusCode = 200;
+      res.json({
+        success: true,
+        token,
+        status: "You are successfully logged in!",
+      });
+    }
+  }
+);
+
 module.exports = router;
