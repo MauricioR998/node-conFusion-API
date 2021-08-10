@@ -29,7 +29,6 @@ dishRouter
   })
   .post(
     cors.corsWithOptions,
-    cors.corsWithOptions,
     authenticate.verifyUser,
     authenticate.verifyAdmin,
     (req, res, next) => {
@@ -48,7 +47,6 @@ dishRouter
   )
   .put(
     cors.corsWithOptions,
-    cors.corsWithOptions,
     authenticate.verifyUser,
     authenticate.verifyAdmin,
     (req, res, next) => {
@@ -57,7 +55,6 @@ dishRouter
     }
   )
   .delete(
-    cors.corsWithOptions,
     cors.corsWithOptions,
     authenticate.verifyUser,
     authenticate.verifyAdmin,
